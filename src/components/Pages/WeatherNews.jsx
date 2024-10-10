@@ -8,7 +8,7 @@ const WeatherNews = () => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
-    const newsApiKey = '71fad8c1ee2747c2b2c0731a708fedae';
+    const newsApiKey = import.meta.env.VITE_API_KEY_3;
 
     useEffect(() => {
         setNewsArticles([]);
@@ -53,9 +53,10 @@ const WeatherNews = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {newsArticles.map((article, index) => (
                             <div
-                                key={index}
-                                className="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300"
+                            key={index}
+                            className="bg-gradient-to-br from-indigo-600 to-purple-600 p-4 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300"
                             >
+                                
                                 <div className="p-4 bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg">
                                     <img
                                         src={article.urlToImage}

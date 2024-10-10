@@ -7,6 +7,7 @@ const Home = () => {
     const [error, setError] = useState('');
     const [showModal, setShowModal] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
+    const apiKey = import.meta.env.VITE_API_KEY_1;
     useEffect(() => {
         setWeatherData('')
         setError('')
@@ -23,8 +24,9 @@ const Home = () => {
             
         }
     }, [searchLocation,setSearchLocation]);
+    
     const fetchWeatherData = async (location) => {
-        const apiKey = '0ca951761dab655ad9d8642fb9eb8995'
+        
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`);
             if (!response.ok) throw new Error('Weather Data Not Found');

@@ -11,7 +11,7 @@ const WeatherMap = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [showModal, setShowModal] = useState(false);
 
-    const openWeatherMapApiKey = 'f10cde2895fc8ea3e9510acaf71642c0'; 
+    const openWeatherMapApiKey = import.meta.env.VITE_API_KEY_2; 
 
     useEffect(() => {
         if (!mapInstance.current) {

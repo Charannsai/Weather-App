@@ -26,12 +26,13 @@ const ForecastPage = () => {
     }, [searchLocation, setSearchLocation]);
 
     const fetchForecastData = async (location) => {
-        const apiKey = 'f10cde2895fc8ea3e9510acaf71642c0';
+        const apiKey = import.meta.env.VITE_API_KEY_2;
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`);
             if (!response.ok) throw new Error('Forecast Data Not Found');
             const data = await response.json();
             const forecast = data.list.map(item => ({
+                city: data.name,
                 dt: item.dt_txt,
                 temp: item.main.temp,
                 description: item.weather[0].description,
@@ -53,11 +54,15 @@ const ForecastPage = () => {
 
     return (
         <div className="mx-auto px-4 pb-4 ">
+            <h2 className="text-3xl min-[320px]:text-2xl sm:text-4xl font-extrabold mb-4 text-red-600 drop-shadow text-center mt-4">
+                            5-Day Weather Forecast
+                        </h2>
             {
                 forecastData.length>0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
                         {forecastData.map((forecast, index) => (
                             <div key={index} className="bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-700 text-white  bg-opacity-20 p-6 rounded-xl shadow-xl backdrop-blur-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
+                                
                                 <h3 className="font-semibold text-xl mb-4">{new Date(forecast.dt).toLocaleString()}</h3>
                                 <p className=" text-lg">🌡️ Temp: <span className="font-bold">{forecast.temp}°C</span></p>
                                 <p className="text-lg capitalize">☁️ {forecast.description}</p>
@@ -69,9 +74,7 @@ const ForecastPage = () => {
 
                 (
                     <div>
-                        <h2 className="text-3xl min-[320px]:text-2xl sm:text-4xl font-extrabold mb-4 text-red-600 drop-shadow text-center mt-4">
-                            5-Day Weather Forecast
-                        </h2>
+                        
                         <h1 className='text-2xl font-bold text-center mb-2 text-blue-500 min-[320px]:text-lg sm:text-2xl'>Plan Ahead with Precision!</h1>
                         <p className='text-justify text-gray-700 mb-8 font-bold '>Welcome to your ultimate WeatherNow companion. Our 5-Day, 3-Hour Interval Forecast keeps you one step ahead of changing weather conditions. Whether you're planning an outing, managing your daily commute, or just curious about the upcoming weather, we provide real-time updates and detailed forecasts every 3 hours for the next 5 days.
                         Stay informed, stay prepared, and make the most of every moment with our accurate and reliable weather insights!</p>
