@@ -12,11 +12,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter>
       <Routes>
-        <Route path='/' Component={<App />}>
-          <Route index Component={<Home />} />
-          <Route path='/forecast' Component={<ForecastPage />} />
-          <Route path='/map' Component={<WeatherMap />} />
-          <Route path='/news' Component={<WeatherNews />} />
+        <Route path='/' element={<App />}>
+          <Route index element={<Home />} />
+          <Route path='/forecast' element={<ForecastPage />} />
+          <Route path='/map' element={<WeatherMap />} />
+          <Route path='/news' element={<WeatherNews />} />
         </Route>
       </Routes>
     </HashRouter>
