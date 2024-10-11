@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview --port 8080"
+    "preview": "vite preview"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
