@@ -82,7 +82,7 @@ const Home = () => {
                 <p className='text-gray-700 font-bold mb-2 text-justify'>
                     Welcome to your personalized weather companion. Whether you're planning your day or preparing for an outdoor adventure, we’ve got you covered with real-time updates, accurate forecasts, and the latest news tailored to your location. Experience weather like never before with the touch of a button.
                 </p>
-                <p className='text-center mt-2 mb-4 text-3xl font-bold text-green-600 font-mono min-[320px]:text-lg sm:text-3xl'>
+                <p className='text-center mt-2 mb-2 text-3xl font-bold text-green-600 font-mono min-[320px]:text-lg sm:text-3xl'>
                     Search for your City above and explore what the weather has in store for you today!
                 </p>
             </div>
