@@ -7,7 +7,7 @@ This Weather App is a responsive, modern web application built with Vite, React,
 - **5-day Forecast:** View detailed 5-day, 3-hour interval forecasts for your selected location.
 - **Weather Maps:** Explore weather conditions on a map with options for different data layers (e.g., temperature, precipitation).
 - **News:** Stay informed with the latest news articles relevant to your location.
-  NOTE : As of now the News Articles will not fetched due to subscription issues. Thank You! 
+  NOTE : As of now the News Articles will not be fetched due to subscription issues. Thank You! 
 - **Interactive Search:** Easily search for a city, and the app fetches and displays the weather data. Smoothly reset search fields for new queries.
 - **Error Handling:** Alerts users with a modal if an incorrect city name is entered, ensuring a seamless experience.
 - **Mobile-Friendly Design:** Fully responsive layout with a toggle menu bar for mobile devices and smooth animations for enhanced user experience.
